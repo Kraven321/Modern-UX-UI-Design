@@ -15,20 +15,7 @@ const Navbar = () => {
 
   const [menuOpen, setMenuOpen] = useState(false)
 
-  useEffect(() => {
-    const closeMenu = (event: MouseEvent) => {
-      // Verifica se o clique não foi dentro do menu
-      if (menuOpen && !event.target.closest(".menu-container")) {
-        setMenuOpen(false);
-      }
-    };
-
-    document.addEventListener("click", closeMenu);
-
-    return () => {
-      document.removeEventListener("click", closeMenu);
-    };
-  }, [menuOpen]);
+ 
 
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
